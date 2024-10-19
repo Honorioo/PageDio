@@ -66,6 +66,10 @@ const Login = () => {
     }
   };
 
+  const HandleClickRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <>
       <Header />
@@ -100,7 +104,7 @@ const Login = () => {
             </form>
             <Row>
               <EsqueciText>Esqueci minha senha</EsqueciText>
-              <CriarText>Criar conta</CriarText>
+              <CriarText onClick={HandleClickRegister}>Criar conta</CriarText>
             </Row>
           </Wrapper>
         </Column>
