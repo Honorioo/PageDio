@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "../Button";
 import LogoDio from "../../assets/logo-dio.png";
+import { useNavigate } from "react-router-dom";
+
 
 import {
   Container,
@@ -15,7 +17,20 @@ import {
   Logo,
 } from "./styles";
 
+
+
 const Header = ({ autenticado }) => {
+  
+  const navigate = useNavigate()
+
+  const handleClickSingIn = () =>{
+    navigate('/login')
+  }
+
+  const handleClickRegister = () =>{
+    navigate('/register')
+  }
+
   return (
     <>
       <Wrapper>
@@ -38,8 +53,8 @@ const Header = ({ autenticado }) => {
           ) : (
             <>
               <MenuRight href="#">Home</MenuRight>
-              <Button title="Entrar" />
-              <Button title="Cadastrar" />
+              <Button title="Entrar" onClick={handleClickSingIn} />
+              <Button title="Cadastrar" onClick={handleClickRegister} />
             </>            
           )}
 

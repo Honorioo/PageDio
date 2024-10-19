@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Vinicius",
+      "email": "vini@email.com",
+      "senha": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Digão",
+      "email": "digao@email.com",
+      "senha": "456789"
+    },
+    {
+      "id": "fd32",
+      "name": "Bete Honorio",
+      "email": "bete@email.com",
+      "senha": "1234"
+    },
+    {
+      "id": "e552",
+      "name": "julia",
+      "email": "ju@email.com",
+      "senha": "123456"
+    }
+  ]
+}

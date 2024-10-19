@@ -39,3 +39,6 @@ export const TextContent = styled.p`
     
     color: #FFFFFF;
 `
+export const Image = styled.img`
+    width: 700px;
+`
