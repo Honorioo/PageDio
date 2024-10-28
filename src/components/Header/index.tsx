@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../Button";
 import LogoDio from "../../assets/logo-dio.png";
 import { useNavigate } from "react-router-dom";
-
+import { IHeader } from "./types"
 
 import {
   Container,
@@ -19,7 +19,7 @@ import {
 
 
 
-const Header = ({ autenticado }) => {
+const Header = ({ autenticado }: IHeader) => {
   
   const navigate = useNavigate()
 

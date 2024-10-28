@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+import { IFormDataReg } from './types'
+
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -55,7 +57,7 @@ const Register = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData : IFormDataReg) => {
     try {
       const { data } = await api.post(
         'http://localhost:8001/users',
