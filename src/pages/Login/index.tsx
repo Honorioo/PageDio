@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { IFormData } from './types'
+import { IFormData } from "./types";
 
 import { MdEmail, MdLock } from "react-icons/md";
 
@@ -43,27 +43,27 @@ const Login = () => {
   const {
     control,
     handleSubmit,
-    watch,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<IFormData>({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
-  console.log(isValid, errors);
-
-  const onSubmit = async (formData : IFormData) => {
+const onSubmit = async (formData: IFormData) => {
     try {
+      console.log("Dados do formulário:", formData);
       const { data } = await api.get(
         `users?email=${formData.email}&senha=${formData.password}`
       );
-      if(data.length === 1){
+
+      console.log("Resposta da API:", data);
+
+      if (data.length === 1) {
         navigate("/feed");
+      } else {
+        alert("Email ou Senha inválido");
       }
-      else{
-        alert("Email ou Senha inválido")
-      }
-    } catch {
+    } catch(error) {
       alert("Houve um erro, tente novamente");
     }
   };
@@ -85,7 +85,7 @@ const Login = () => {
         <Column>
           <Wrapper>
             <TitleLogin>Faça seu cadastro</TitleLogin>
-            <SubTitleLogin>Faça seu mogin e make the change</SubTitleLogin>
+            <SubTitleLogin>Faça seu login e make the change</SubTitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Input
                 name="email"
